@@ -3,7 +3,8 @@ import Animals.Animals
 object Main {
 
   def main(args:Array[String]) = {
- 
+    val l = "全体,ぜんたい"
+    println(l.substring(0, l.indexOf(",")), l.substring(l.indexOf(",") + 1))
   }
   
   /**
