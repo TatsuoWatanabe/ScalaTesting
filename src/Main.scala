@@ -3,7 +3,17 @@ import Animals.Animals
 object Main {
 
   def main(args:Array[String]) = {
-    simpleDateFormatTest
+    acceptFormatsTest
+  }
+
+  /**
+   * List exists for accept formats
+   */
+  def acceptFormatsTest() {
+    val acceptFormats = List(".wav", ".mp3", ".aac", ".m4a", ".mid")
+    val name = "music.MP3"
+    val result = acceptFormats.exists(name.toLowerCase.endsWith(_))
+    println(result)
   }
   
   /**
