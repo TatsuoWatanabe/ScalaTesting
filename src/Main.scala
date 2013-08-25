@@ -3,9 +3,22 @@ import Animals.Animals
 object Main {
 
   def main(args:Array[String]) = {
-    acceptFormatsTest
+    ternaryOperatorTest
   }
 
+  /**
+   * what data type of char 
+   */
+  def ternaryOperatorTest() {
+    val a = if(true) 'A' else 65
+    val b = if(false) 'A' else 65
+    val c = 65.asInstanceOf[Char]
+    
+    println(a)
+    println(b)
+    println(c)
+  }  
+  
   /**
    * List exists for accept formats
    */
