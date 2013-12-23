@@ -1,15 +1,39 @@
 import Animals.Animals
+import scala.collection.generic.Sorted
+import java.util.Calendar
+import org.junit.Test
 
-object Main {
-
-  def main(args:Array[String]) = {
-    ternaryOperatorTest
+class Main {
+  
+  /**
+   * calendarTest
+   */
+  @Test def calendarTest() {
+    val cal = Calendar.getInstance()
+    cal.add(Calendar.YEAR, -20)
+    println(cal.getTime)
   }
-
+  
+  /**
+   * emptyListTest
+   */
+  @Test def emptyListTest(){
+    val l = Option(List()).filterNot(_.isEmpty)
+    println(l)
+  }
+  
+  /**
+   * sortArrayTest
+   */
+  @Test def sortArrayTest() {
+    val a = Array(1,3,5,2,4).sorted(Ordering[Int].reverse)
+    a foreach println
+  }
+  
   /**
    * what data type of char 
    */
-  def ternaryOperatorTest() {
+  @Test def ternaryOperatorTest() {
     val a = if(true) 'A' else 65
     val b = if(false) 'A' else 65
     val c = 65.asInstanceOf[Char]
@@ -22,7 +46,7 @@ object Main {
   /**
    * List exists for accept formats
    */
-  def acceptFormatsTest() {
+  @Test def acceptFormatsTest() {
     val acceptFormats = List(".wav", ".mp3", ".aac", ".m4a", ".mid")
     val name = "music.MP3"
     val result = acceptFormats.exists(name.toLowerCase.endsWith(_))
@@ -32,7 +56,7 @@ object Main {
   /**
    * Simple date format
    */
-  def simpleDateFormatTest() {
+  @Test def simpleDateFormatTest() {
     simpleDateFormat(5000)     //0:05  
     simpleDateFormat(100000)   //1:40
     simpleDateFormat(1000000)  //16:40
@@ -57,7 +81,7 @@ object Main {
   /**
    * String split sample
    */
-  def splitString() {
+  @Test def splitString() {
     //val l = "全体,ぜんたい"
     //println(l.substring(0, l.indexOf(",")), l.substring(l.indexOf(",") + 1))
     val s = "音声ファイル01.mp3"
@@ -67,7 +91,7 @@ object Main {
   /**
    * List shuffle sample
    */
-  def randomList() {
+  @Test def randomList() {
     val l = 1 to 100 //List.range(1, 100 + 1)
     println(l)
     //ランダムに4つ取り出し
@@ -77,7 +101,7 @@ object Main {
   /**
    * Case Class and Enum Sample
    */
-  def animal() {
+  @Test def animal() {
     val animal1 = Animal("いぬ")
     val animal2 = Animal("ねこ")
     println(animal1.description)
@@ -93,7 +117,7 @@ object Main {
 /**
  * GUI Sample
  */
-  def happyFrame() {
+  @Test def happyFrame() {
     import swing._
     val frame = new Frame {
       title = "Happy"
