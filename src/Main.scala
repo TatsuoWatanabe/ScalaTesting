@@ -4,6 +4,17 @@ import java.util.Calendar
 import org.junit.Test
 
 class Main {
+  /**
+   * regExp4chars
+   */
+  @Test def regExp4chars() {
+    val date    = "0131"
+    val pattern = """^(0[1-9]|1[012])(0[1-9]|[12][0-9]|3[01])$"""
+    val result = if (date.matches(pattern)) { date } else {
+      "else"
+    }
+    println(result)
+  }
   
   /**
    * calendarTest
@@ -114,14 +125,4 @@ class Main {
     println(ani)    
   }
   
-/**
- * GUI Sample
- */
-  @Test def happyFrame() {
-    import swing._
-    val frame = new Frame {
-      title = "Happy"
-      visible = true
-    }
-  }
 }
